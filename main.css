@@ -505,7 +505,8 @@ input {
 
 #lname {
   display: block;
-  height: 2rem;
+  padding: 1rem;
+  background-color: black;
 }
 
 .anim-typewrite {
@@ -733,35 +734,8 @@ input {
 }
 
 .textarrow {
-  -webkit-animation: bounce 3s infinite;
-          animation: bounce 3s infinite;
-}
-
-@-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translate(-2rem, 1.5rem);
-  }
-  40% {
-    -webkit-transform: translate(-2rem, -30px);
-  }
-  60% {
-    -webkit-transform: translate(-2rem, -15px);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translate(-2rem, 1.5rem);
-            transform: translate(-2rem, 1.5rem);
-  }
-  40% {
-    -webkit-transform: translate(-2rem, -30px);
-            transform: translate(-2rem, -30px);
-  }
-  60% {
-    -webkit-transform: translate(-2rem, -15px);
-            transform: translate(-2rem, -15px);
-  }
+  -webkit-transform: translate(-2rem, 1.9rem);
+          transform: translate(-2rem, 1.9rem);
 }
 
 /*
