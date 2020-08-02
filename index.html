@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/48d9575789.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <title>Matthew Rodriguez</title>
+   
+  
+</head>
+
+<body onload="myFunction()" style="margin:0;" class="bodyindex" style="background-color: black;">
+
+
+    <MAIN id="backg">
+        <div id="user">Scanner</div>
+
+        <div id="loader">
+            <div class="overlay" id='load'></div>
+
+            <span id="load"></span>
+            <span id="load"></span>
+            <span id="load"></span>
+          </div>
+
+    </MAIN>
+    <div class="left">
+
+<main>
+
+<section id="wrapper">
+
+    <div class="noise indexnoise"></div>
+<div class="overlay aboutover"></div>
+<div class="terminal indexterm">
+  <a href="index.html"> <div class="animate-bottom "><img src="ufo.png" class="img"></div></a>
+  <h1 class="role animate-bottom errorcode" >
+Welcome back Cadet. Unidentified Flying Objects are all over the scanner, we need your help. Firstly, we need to ask you some questions to confirm your identity. </h1>   
+
+<h1 class="animate-bottom  role question1 question" >
+ Are you a human? y/n</h1>   
+ <span id="result"  class="errorcodee" ></span>
+
+
+<h1 class="role question " id="question2" style="display: none;">
+  What is your passcode? </h1> 
+
+  <span id="result2"  class="errorcodee" style="display: none;"></span>
+
+
+  <h1 class="role question " id="question3" style="display: none;">
+    </h1> 
+
+   <div class="textarrow">></div> <input type="text"  id="lname" autocomplete="nope" ><br/>
+    <br><input type="button" value="Enter" id="submit" onClick="pr()">
+    <br><input type="button" value="Clear Answer" id="clear" onClick="rem()">
+
+  
+    <div class="popup">
+        <div class="content">
+          Passcode verified. <br><br>Assist us by tapping on each object that is identified by the scanner. 
+        </div>
+        <div class="buttons">
+          <button onclick="window.location.href='/scan.html'">I'm ready</button>
+        </div>
+      </div>
+  
+  <!--<p class="output animate-bottom"><a href="https://github.com/Matthew-Rodriguez"><i class="fab fa-github icongit"></i></a> <a href="https://www.linkedin.com/in/matthew-rodriguez-080697146/"><i class="fab fa-linkedin iconlink"></i></a></p>-->
+
+  
+</div>
+
+<a href="userdatabase.html"><div class="exit3">PROFILE<i class="fas fa-power-off icon"></i></div> </a>
+
+</section>
+</div>
+</main>
+
+                <script src="index.js"></script>
+
+                <script>
+                    var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("backg").style.display = "none";
+
+  document.getElementById("wrapper").style.display = "block";
+}
+                </script>
+
+
+
+<script>
+
+function pr() {
+   var question1 = document.getElementById("result").innerHTML = document.getElementById('lname').value;
+   console.log(question1)
+   var ques = question1.replace(/(^\s+|\s+$)/g,'');
+
+   var text;
+
+
+   if(ques ==="yes" || ques ==="y" || ques === "Y" || ques==="YES") {
+       text=" ^ LOL, just making sure. "
+       $('#question2').css({
+            "display":"unset"
+          })
+          $('.question1').css({
+            "animation":"none"
+          })
+          $('.exit3').css({
+            "animation":"blink-2 1s infinite"
+          })
+          
+          document.getElementById("lname").value = " ";
+
+          
+          $('#question3').css({
+            "display":"none"
+          })
+   } else if (ques ==="no" || ques ==="n" || ques === "no" || ques === "NO") {
+       text="failed."
+       $('#question3').css({
+            "display":"unset"
+          })
+          
+          $('#question2').css({
+            "display":"none"
+          })
+          document.getElementById("lname").value = " ";
+
+        } else if (ques ==="0317" ) {
+       text="^ Correct."
+
+       $('.popup').css({
+            "width":"100vh",
+            "height": "25rem",
+            "top":"20%",
+            
+          })
+   
+          document.getElementById("lname").value = " ";
+   
+   
+   } else {
+       text="Never heard of that. "
+       document.getElementById("lname").value = " ";
+
+   }
+
+  document.getElementById("result").innerHTML = text;
+
+
+  }
+
+
+  $("#lname").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#submit").click();
+        console.log('press')
+    }
+
+
+
+
+
+});
+
+
+
+</script>
+
+<script>
+function rem() {
+    document.getElementById("result").innerHTML = " ";
+    document.getElementById("lname").value = " ";
+    document.getElementById("question2").innerHTML = " ";
+    document.getElementById("question3").innerHTML = " ";
+
+
+
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+
+
+</html>
