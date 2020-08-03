@@ -368,6 +368,8 @@ a {
   font-size: 1.5rem;
   -webkit-animation: none;
           animation: none;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 @media screen and (max-width: 525px) {
@@ -387,6 +389,33 @@ a {
     overflow-y: unset;
     height: 130vh;
   }
+}
+
+#wrapper2 {
+  display: unset;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 525px) {
+  #wrapper2 {
+    overflow-y: unset;
+    height: 130vh;
+  }
+}
+
+.left {
+  display: unset;
+  overflow: hidden;
+  background-color: #000000;
+  background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Press Start 2P';
+  font-size: 1.5rem;
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow: 0 0 1ex #33ff33, 0 0 2px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  height: 100vh;
 }
 
 #backg {
@@ -443,7 +472,8 @@ a {
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
-  animation-duration: 1s;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
 }
 
 @-webkit-keyframes animatebottom {
@@ -512,6 +542,13 @@ input {
 .anim-typewrite {
   -webkit-animation: blinkTextCursor 500ms infinite normal;
           animation: blinkTextCursor 500ms infinite normal;
+}
+
+.anim {
+  -webkit-animation: blink-2 1s infinite;
+          animation: blink-2 1s infinite;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 @-webkit-keyframes blinkTextCursor {
@@ -765,5 +802,13 @@ input {
 #clear:hover {
   background-color: white;
   color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.data {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

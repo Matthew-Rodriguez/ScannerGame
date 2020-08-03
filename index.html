@@ -14,7 +14,7 @@
 
 <body onload="myFunction()" style="margin:0;" class="bodyindex" style="background-color: black;">
 
-
+    
     <MAIN id="backg">
         <div id="user">Scanner</div>
 
@@ -27,36 +27,41 @@
           </div>
 
     </MAIN>
-    <div class="left">
+
+   
+
+
+
+    <div class="left" class="unset">
 
 <main>
-
-<section id="wrapper">
-
-    <div class="noise indexnoise"></div>
-<div class="overlay aboutover"></div>
-<div class="terminal indexterm">
-  <a href="index.html"> <div class="animate-bottom "><img src="ufo.png" class="img"></div></a>
-  <h1 class="role animate-bottom errorcode" >
+    
+<section id="wrapper" class="unset">
+<section>
+    <div class="noise indexnoise unset"></div>
+<div class="overlay aboutover unset"></div>
+<div class="terminal indexterm unset">
+  <a href="index.html"> <div class="animate-bottom " ><img src="ufo.png" class="img"></div></a>
+  <h1 class="role animate-bottom errorcode txtbox" >
 Welcome back Cadet. Unidentified Flying Objects are all over the scanner, we need your help. Firstly, we need to ask you some questions to confirm your identity. </h1>   
 
-<h1 class=" role question1 question" >
+<h1 class=" role question1 question txtbox" >
  Are you a human? y/n</h1>   
  <span id="result"  class="errorcodee" ></span>
 
 
-<h1 class="role question " id="question2" style="display: none;">
+<h1 class="role question txtbox" id="question2" style="display: none;">
   What is your passcode? </h1> 
 
-  <span id="result2"  class="errorcodee" style="display: none;"></span>
+  <span id="result2"  class="errorcodee unset" style="display: none;"></span>
 
 
-  <h1 class="role question " id="question3" style="display: none;">
+  <h1 class="role question unset" id="question3" style="display: none;">
     </h1> 
 
-   <input type="text"  id="lname" autocomplete="nope" ><br/>
-    <br><input type="button" value="Enter" id="submit" onClick="pr()">
-    <br><input type="button" value="Clear Answer" id="clear" onClick="rem()">
+   <input type="text"  id="lname" autocomplete="nope" class="txtbox"><br/>
+    <br><input type="button" value="Enter" id="submit" onClick="pr()" class="unset">
+    <br><input type="button" value="Clear Answer" id="clear" onClick="rem()" class="unset">
 
   
     <div class="popup">
@@ -73,15 +78,140 @@ Welcome back Cadet. Unidentified Flying Objects are all over the scanner, we nee
   
 </div>
 
-<a href="userdatabase.html"><div class="exit3">PROFILE<i class="fas fa-power-off icon"></i></div> </a>
-
+ <div onClick="prof()" id="prof" class="exit3">PROFILE<i class="fas fa-power-off icon"></i></div>
+</section>
 </section>
 </div>
-</main>
+
+
+
+
+
+
+<div class="left hide">
+
+    <section>
+      
+    <section id="wrapper" class="hide">
+    
+        <div class="noise hide"></div>
+    <div class="overlay hide"></div>
+    <div class="terminal hide">
+      <h1 class="role animate-bottom roleque hide" >
+      </h1>   
+      <br>
+      <br>
+   <div class="animate-bottom hide" onClick="user()"><img src="ufo.png" class="img2"></div>
+    
+     <p class="output animate-bottom outputque hide" id="fold">View Profile</p><br>
+      <br>
+      <div id="folder" onClick="user()" class="potential hide data" >  <span class="errorcode  name" >name: user2730402</span><br>
+        <div class="hide data" style="margin-top: 2rem;" onClick="user()">PhD in Aerospace Engineering</div> <br><br>
+        <div class="hide data" style="margin-top: 1rem;" onClick="user()">Passcode: <b class="anim">0317</b></div>
+    
+
+    
+    </div>
+    
+     
+  <div  onClick="user()" id="back" class="exit3 hide">back<i class="fas fa-power-off icon"></i></div>
+    
+      <!--<p class="output animate-bottom"><a href="https://github.com/Matthew-Rodriguez"><i class="fab fa-github icongit"></i></a> <a href="https://www.linkedin.com/in/matthew-rodriguez-080697146/"><i class="fab fa-linkedin iconlink"></i></a></p>-->
+    
+      
+    </div>
+    
+    
+</section>
+    </section>
+    </div>
+
 
                 <script src="index.js"></script>
 
                 <script>
+                    var counter2 = 0
+
+$("#fold").click(function() {
+  counter2++
+  if(counter2 % 2 === 1) {
+    $('.data').css({
+        "display":"unset"
+      })
+      $('#folder').css({
+        "display":"unset"
+      })
+      console.log('sdlkj')
+    } else {
+        $('#folder').css({
+        "display":"none",
+    })
+}
+})
+
+var coun = 0
+
+$("#prof").click(function() {
+  coun++
+  if(coun % 2 === 1) {
+      console.log(1)
+    $('.hide').css({
+        "display":"unset"
+      })
+      $('.unset').css({
+        "display":"none"
+      })
+      $(".data").css({
+        "display": "none"
+  })
+  $(".txtbox").css({
+        "visibility": "unset"
+  })
+    } else  if(coun % 2 === 2){
+        console.log(2)
+
+        $(".txtbox").css({
+        "visibility": "hidden"
+  })
+        $('.hide').css({
+        "display":"none"
+      })
+
+      $(".data").css({
+        "display": "unset"
+  })
+  $("#question2").css({
+        "display": "none"
+  })
+} else {
+    $('.hide').css({
+        "display":"unset"
+      })
+      $('.unset').css({
+        "display":"none"
+      })
+      $(".data").css({
+        "display": "none"
+  })
+  $(".txtbox").css({
+        "visibility": "unset"
+  })
+}
+})
+
+function user() {
+  $(".hide").css({
+    "display": "none"
+  })
+  $(".unset").css({
+    "display": "unset"
+  })
+  $(".data").css({
+    "display": "none"
+  })
+}
+
+
                     var myVar;
 
 function myFunction() {
